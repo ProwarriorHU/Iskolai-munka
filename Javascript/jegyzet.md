@@ -1,76 +1,74 @@
-Javascript
-- A javascript egy C-n alapuló nyelv 
-- Gyengén típusos, azaz a változók típusát nem muszáj definiálni 
+# Javascript
+A javascript egy C-n alapuló nyelv. Gyengén típusos, azaz a változók típusát nem muszáj definiálni 
 
-Változók
+### Változók
 - Undefined – nem definiált változó 
 - Boolean – igen/nem értéket tároló változó 
 - String - szöveget tárol 
 - BigInt – 15 számjegynél nagyobb számoknak 
 - Null - változó hiányát jelenti 
-- Number -   
+- Number -  Szám változó, ami egyaránt tartalmazhat egész vagy valós számokat is.  
 - Symbol - speciális változó, kulcsként használjuk mert minden eleme egyedi 
 
-Elágazások
+### Elágazások
 - If (feltétel) {} - egyirányú elágazás 
 - If (feltétel) {} else {} - kétirányú elágazás 
 - If (feltétel) {} else if (feltétel) {} - többirányú elágazás 
 
-Ciklusok
+### Ciklusok
 - While (feltétel) {} - elöltesztelő ciklus 
 - For (lépésszám) {} - számláló ciklus 
 - For (let elem in tömb) {} - for in ciklus, végig jár egy tömböt 
 - Do {} (feltétel) - hátultesztelő ciklus, egyszer mindenképp lefut mert végén értékeli ki a feltételt 
 
-Tömbök
-- Létrehozása
-    const tomb = []; 
-    const tomb1 = [“auto”, 1, ”cica”, 2]; 
-    const tomb2 = [[1, 2], 3, [2, 3]]; 
-    const tomb3 = new Array(); 
-    const tomb4 = new Array(3); 
-    const tomb5 = new Array(1, 2, 3); 
-    const tomb6 = new Array(“3”); 
-    const tomb7 = new Array.of(3); 
+### Tömbök
+- Létrehozása:
+const tomb = []; 
+const tomb1 = [“auto”, 1, ”cica”, 2]; 
+const tomb2 = [[1, 2], 3, [2, 3]]; 
+const tomb3 = new Array(); 
+const tomb4 = new Array(3); 
+const tomb5 = new Array(1, 2, 3); 
+const tomb6 = new Array(“3”); 
+const tomb7 = new Array.of(3); 
+array10 = [1, {nev: “Erik”}, [1, “kettő”]] 
+array10[1].nev
 
-    array10 = [1, {nev: “Erik”}, [1, “kettő”]] 
-    array10[1].nev 
 - Típus lekérése - typeof <érték> 
 - Tömb hosszának lekérése
-    let L = array10.length; 
-    array10.tostring(); 
+let L = array10.length; 
+array10.tostring(); 
 
 - Elválasztó elemet megváltoztatása
-    let gy = [‘alma’, ‘banán’, ‘körte’]; 
-    gy.join(‘*’); 
-    //alma*banán*körte 
--Poppolt változó lementése
-    gy.pop(); 
-    let L = gy.pop(); 
-- A tömb elejéről kivesz egy elemet és minden indexet 1-gyel csökkent
-    gy.shift(); 
-- Betesz egy elemet a tömb elejére és minden indexet 1-gyel eltol
-    gy.unshift(“citrom”); 
-- Új elem a végére
-    gy[gy.length] = “kiwi”; 
-- 0-dik elem undefined
-    Delete gy[0]; 
-- Tömbök összefűzése
-    let L = [“Erika, “Dora”]; 
-    let F = [“Emil”, “Tamás”, “Kristóf”]; 
-    let gyerekek = L.concat(F); 
-- Tömb egyszerűsített kiírása
-    array10 = [[1, 2], [3, 4], [5, 6]]; 
-    array10.flat(); 
-    //1, 2, 3, 4, 5, 6 
-- Megadott helyről, megadott mennyiségű elemet törölni, és elemeket hozzáadni
-    //Paraméterek: honnantól, mennyit törölni, mit hozzáadni
-    gy.splice(1, 0, “citrom”, “kiwi”); 
-    //[“alma”, “citrom”, “kiwi”, “banán”, “körte”] 
-- Elem törlése splice-al
-    gy.splice(0,1); 
+let gy = [‘alma’, ‘banán’, ‘körte’]; 
+gy.join(‘%’);  //alma%banán%körte
 
-Set, Map
+-Poppolt változó lementése:
+gy.pop(); 
+let L = gy.pop(); 
+- A tömb elejéről kivesz egy elemet és minden indexet 1-gyel csökkent
+gy.shift(); 
+- Betesz egy elemet a tömb elejére és minden indexet 1-gyel eltol
+gy.unshift(“citrom”); 
+- Új elem a végére
+gy[gy.length] = “kiwi”; 
+- 0-dik elem undefined
+Delete gy[0]; 
+- Tömbök összefűzése
+let L = [“Erika, “Dora”]; 
+let F = [“Emil”, “Tamás”, “Kristóf”]; 
+let gyerekek = L.concat(F); 
+- Tömb egyszerűsített kiírása
+array10 = [[1, 2], [3, 4], [5, 6]]; 
+array10.flat();  //1, 2, 3, 4, 5, 6 
+- Megadott helyről, megadott mennyiségű elemet törölni, és elemeket hozzáadni
+//Paraméterek: honnantól, mennyit törölni, mit hozzáadni
+gy.splice(1, 0, “citrom”, “kiwi”); 
+//[“alma”, “citrom”, “kiwi”, “banán”, “körte”] 
+- Elem törlése splice-al
+gy.splice(0,1); 
+
+### Set, Map
 - let set = new Set(); - set létrehozása
 - set.add(<érték>); - érték hozzáadása
 - set.delete(<érték>); - kijelölt érték törlése
@@ -82,11 +80,8 @@ Set, Map
 - szotar.size - elemek számának lekérése 
 - szotar.delete(<kulcs>) - bizonyos kulcs-ú elemet töröl 
 - szotar.clear(); - teljes map törlése 
-- szotar.foreach((value, key) => //csak foreach-el bejárható
-    {
-        //clg = console.log
-        clg(‘${key}-${value}’); 
-    }
+- szotar.foreach((value, key) => {clg(‘${key}-${value}’);}
+//csak foreach-el bejárható, clg console.log-t jelenti
 - for (let k of szotar.entries()) - visszaadja a kulcs-érték párokat
-                      .keys() - csak a kulcsokat adja vissza
-                      .values() - csak az értékeket adja vissza
+.keys() - csak a kulcsokat adja vissza
+.values() - csak az értékeket adja vissza
