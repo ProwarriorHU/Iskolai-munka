@@ -1,0 +1,15 @@
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\bin\Debug\net6.0\2023 11 06.exe
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\bin\Debug\net6.0\2023 11 06.deps.json
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\bin\Debug\net6.0\2023 11 06.runtimeconfig.json
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\bin\Debug\net6.0\2023 11 06.dll
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\bin\Debug\net6.0\2023 11 06.pdb
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\obj\Debug\net6.0\2023 11 06.csproj.AssemblyReference.cache
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\obj\Debug\net6.0\2023 11 06.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\obj\Debug\net6.0\2023 11 06.AssemblyInfoInputs.cache
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\obj\Debug\net6.0\2023 11 06.AssemblyInfo.cs
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\obj\Debug\net6.0\2023 11 06.csproj.CoreCompileInputs.cache
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\obj\Debug\net6.0\2023 11 06.dll
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\obj\Debug\net6.0\refint\2023 11 06.dll
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\obj\Debug\net6.0\2023 11 06.pdb
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\obj\Debug\net6.0\2023 11 06.genruntimeconfig.cache
+C:\Users\juhasz.mate.laszlo\Documents\Git\iskolai\C#\2023 11 06\2023 11 06\obj\Debug\net6.0\ref\2023 11 06.dll
