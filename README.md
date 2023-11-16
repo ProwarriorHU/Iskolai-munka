@@ -1,15 +1,12 @@
-# Iskolai anyagaim
+# Szerény tanulmányaim
 
-## Jegyzeteim
-
-- [C# jegyzet](Csharp/Asztalialkalmazások/jegyzet.md)
-- [Javascript jegyzet](Javascript/jegyzet.md)
-
-## Órai munkáim
-
-- [C# órai](Csharp/)
-- [Javascript órai](Javascript/)
-
-## Házifeladataim
-
-## Projektjeim
+## Asztali alkalmazások (C#)
+- `[Órai munka](Asztali_alkalmazasok/Oraimunka/Oraimunka)`
+- `[Jegyzet](Asztali_alkalmazasok/jegyzet.md)`
+## Szoftvertesztelés (C#)
+- `[Órai munka](Szoftverteszteles/Oraimunka)`
+- `[Jegyzet](Szoftverteszteles/jegyzet.md)`
+## Webprogramozás (HTML, CSS, JS)
+- `[Órai munka](Webprogramozas/Oraimunka)`
+- `[HTML Jegyzet](Webprogramozas/html_jegyzet.md)`
+- `[JS Jegyzet](Webprogramozas/js_jegyzet.md)`
