@@ -2,7 +2,7 @@
 
 ## Jegyzeteim
 
-- [C# jegyzet](Csharp/jegyzet.md)
+- [C# jegyzet](Csharp/Asztalialkalmazások/jegyzet.md)
 - [Javascript jegyzet](Javascript/jegyzet.md)
 
 ## Órai munkáim
