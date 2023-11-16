@@ -1,0 +1,76 @@
+.elem{
+    background-color: goldenrod;
+    border: 1px solid red;
+    margin: 5px;
+    padding: 5px;
+}
+
+.flex-container{
+    background-color: magenta;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 250px;
+    align-items: flex-start;
+    align-content: space-between;
+}
+
+.flex-container2{
+    background-color: magenta;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 250px;
+}
+
+#azon_1{
+    flex-grow: 2;
+}
+
+#azon_2{
+    flex-grow: 8;
+}
+
+#azon_3{
+    flex-grow: 2;
+}
+/*Desktop first grid*/
+.grid{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+@media screen and (max-width: 768px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 480px){
+    .grid{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(6, 1fr);
+    }
+}
+/*Mobile first grid*/
+.grid2{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+}
+@media screen and (min-width: 768px){
+    .grid{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+    }
+}
+@media screen and (min-width: 1280px){
+    .grid{
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}

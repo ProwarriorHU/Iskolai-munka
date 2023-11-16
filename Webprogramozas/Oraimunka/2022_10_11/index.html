@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="js/main.js"></script>
+</head>
+<body>
+    <form action="">
+        <input type="number" name="szam" id="szam1"><br>
+        <input type="number" name="szam" id="szam2"><br>
+        <button type="button" onclick="osszead()">+</button>
+        <button type="button" onclick="kivon()">-</button>
+        <button type="button" onclick="oszt()">/</button>
+        <button type="button" onclick="szoroz()">*</button>
+    </form>
+    <span id="eredmeny"></span>
+    <br>
+    <form action="">
+        Kedvenc játékod száma:
+        <input type="number" name="szam" id="listnum"><br>
+        <button type="button" onclick="kikeres()">Kikeresés</button>
+    </form>
+    Kedvenc játékod:
+    <span id="jatek"></span>
+</body>
+</html>
