@@ -1,4 +1,15 @@
-# Iskolai jegyzeteim, órai munkáim, házifeladataim, és projektjeim.
+# Iskolai anyagaim
 
-- [C#](Csharp/)
-- [Javascript](Javascript/)
+## Jegyzeteim
+
+- [C# jegyzet](Csharp/jegyzet.md)
+- [Javascript jegyzet](Javascript/jegyzet.md)
+
+## Órai munkáim
+
+- [C# órai](Csharp/)
+- [Javascript órai](Javascript/)
+
+## Házifeladataim
+
+## Projektjeim
