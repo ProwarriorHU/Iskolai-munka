@@ -23,40 +23,42 @@ A javascript egy C-n alapuló nyelv. Gyengén típusos, azaz a változók típus
 
 ### Tömbök
 - Létrehozása:
-    1. const tomb = []; 
-    2. const tomb1 = [“auto”, 1, ”cica”, 2]; 
-    3. const tomb2 = [[1, 2], 3, [2, 3]]; 
-    4. const tomb3 = new Array(); 
-    5. const tomb4 = new Array(3); 
-    6. const tomb5 = new Array(1, 2, 3); 
-    7. const tomb6 = new Array(“3”); 
-    8. const tomb7 = new Array.of(3); 
-    9. array10 = [1, {nev: “Erik”}, [1, “kettő”]] 
-    10. array10[1].nev
+    const tomb = []; 
+    const tomb1 = [“auto”, 1, ”cica”, 2]; 
+    const tomb2 = [[1, 2], 3, [2, 3]]; 
+    const tomb3 = new Array(); 
+    const tomb4 = new Array(3); 
+    const tomb5 = new Array(1, 2, 3); 
+    const tomb6 = new Array(“3”); 
+    const tomb7 = new Array.of(3); 
+    array10 = [1, {nev: “Erik”}, [1, “kettő”]] 
+    array10[1].nev
 
 - `typeof <érték>` - Típus lekérése
-- Tömb hosszának lekérése
-`let L = array10.length;`
-`array10.tostring();`
+- Tömb hosszának lekérése:
+    let L = array10.length;
+    array10.tostring();
 
-- Elválasztó elemet megváltoztatása
-`let gy = [‘alma’, ‘banán’, ‘körte’];`
-`gy.join(‘%’);`   //alma%banán%körte
+- Elválasztó elemet megváltoztatása:
+    let gy = [‘alma’, ‘banán’, ‘körte’];
+    gy.join(‘%’);
+    //alma%banán%körte
 
 - Poppolt változó lementése:
-`gy.pop();`
-`let L = gy.pop();`
+    gy.pop();
+    let L = gy.pop();
 - `gy.shift();` - A tömb elejéről kivesz egy elemet és minden indexet 1-gyel csökkent
 - `gy.unshift(“citrom”);` - Betesz egy elemet a tömb elejére és minden indexet 1-gyel eltol
 - `gy[gy.length] = “kiwi”;` - Új elem a végére
 - `Delete gy[0];` - 0-dik elem undefined
-- Tömbök összefűzése
-`let L = [“Erika, “Dora”];`
-`let F = [“Emil”, “Tamás”, “Kristóf”];`
-`let gyerekek = L.concat(F);`
-- Tömb egyszerűsített kiírása
-`array10 = [[1, 2], [3, 4], [5, 6]];`
-`array10.flat();`  //1, 2, 3, 4, 5, 6 
+- Tömbök összefűzése:
+    let L = [“Erika, “Dora”];
+    let F = [“Emil”, “Tamás”, “Kristóf”];
+    let gyerekek = L.concat(F);
+- Tömb egyszerűsített kiírása:
+    array10 = [[1, 2], [3, 4], [5, 6]];
+    array10.flat(); 
+    //1, 2, 3, 4, 5, 6 
 - `gy.splice(1, 0, “citrom”, “kiwi”);` - Megadott helyről, megadott mennyiségű elemet törölni, és elemeket hozzáadni. Paraméterei: honnantól, mennyit törölni, mit hozzáadni.
 //[“alma”, “citrom”, “kiwi”, “banán”, “körte”] 
 - `gy.splice(0,1);` - Elem törlése splice-al
@@ -80,3 +82,39 @@ A javascript egy C-n alapuló nyelv. Gyengén típusos, azaz a változók típus
 - `for (let k of szotar.entries())` - visszaadja a kulcs-érték párokat
 - `.keys()` - csak a kulcsokat adja vissza
 - `.values()` - csak az értékeket adja vissza
+
+## Regex 
+
+. - bármilyen karakter 
+
+[éa] - legyen itt é vagy a 
+
+[0-9] - legyen itt szám 
+
+[a-z] - legyen itt kisbetű 
+
+[A-Z] - legyen itt nagybetű 
+
+[a-zA-Z] - nagy vagy kicsi 
+
+[0-9a-zA-Z] - szám vagy nagy vagy kicsi 
+
+[^a-z] - ezeket a karaktereket nem akarjuk 
+
+[^0-9] - nincsenek számok 
+
+.??? - az előtte lévő értéket 0 vagy 1 keresi 
+
+.+ - az előtte lévő értéket 1 vagy többször keresi 
+
+.* - az előtte lévő értéket 0 vagy többször keresi 
+
+{m,n} - megadható az előtte lévő adat legalább hányszor { 3, }, pontosan hányszor { 3 }, legfeljebb hányszor { ,3 }, vagy 2 érték között hányszor { 3, 6 } szerepeljen 
+
+^ - ha a kifejezés elején van, csakis a szó elején kereshet 
+
+$ - csak a szó vége lehet 
+
+( ) - csoportosítás 
+
+| (alt+W) - vagy 
