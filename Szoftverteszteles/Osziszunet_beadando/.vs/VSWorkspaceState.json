@@ -1,9 +1,9 @@
 {
   "ExpandedNodes": [
     "",
-    "\\stringMatekEgyszerű",
+    "\\calculator",
     "\\Tests"
   ],
-  "SelectedNode": "\\stringMatekEgyszerű\\Evaluator.cs",
+  "SelectedNode": "\\Tests\\UnitTest1.cs",
   "PreviewInSolutionExplorer": false
 }
