@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\juhasz.mate.laszlo\\Documents\\Git\\iskolai\\C#\\2023 11 06\\2023 11 06\\2023 11 06.csproj",
-      "projectName": "2023 11 06",
-      "projectPath": "C:\\Users\\juhasz.mate.laszlo\\Documents\\Git\\iskolai\\C#\\2023 11 06\\2023 11 06\\2023 11 06.csproj",
+      "projectUniqueName": "C:\\Users\\juhasz.mate.laszlo\\Documents\\iskolai-munka\\Asztali_alkalmazasok\\Oraimunka\\Oraimunka\\Oraimunka.csproj",
+      "projectName": "Oraimunka",
+      "projectPath": "C:\\Users\\juhasz.mate.laszlo\\Documents\\iskolai-munka\\Asztali_alkalmazasok\\Oraimunka\\Oraimunka\\Oraimunka.csproj",
       "packagesPath": "C:\\Users\\juhasz.mate.laszlo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\juhasz.mate.laszlo\\Documents\\Git\\iskolai\\C#\\2023 11 06\\2023 11 06\\obj\\",
+      "outputPath": "C:\\Users\\juhasz.mate.laszlo\\Documents\\iskolai-munka\\Asztali_alkalmazasok\\Oraimunka\\Oraimunka\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\juhasz.mate.laszlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
