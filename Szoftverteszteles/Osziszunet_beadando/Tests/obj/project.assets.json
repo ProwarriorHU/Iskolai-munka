@@ -973,16 +973,6 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
-      },
-      "stringMatekEgyszerű/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v6.0",
-        "compile": {
-          "bin/placeholder/stringMatekEgyszerű.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/stringMatekEgyszerű.dll": {}
-        }
       }
     }
   },
@@ -3955,42 +3945,32 @@
         "system.xml.xdocument.4.0.11.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
-    },
-    "stringMatekEgyszerű/1.0.0": {
-      "type": "project",
-      "path": "../stringMatekEgyszerű/stringMatekEgyszerű.csproj",
-      "msbuildProject": "../stringMatekEgyszerű/stringMatekEgyszerű.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "C:\\Users\\juhasz.mate.laszlo\\Documents\\iskolai-munka\\Szoftverteszteles\\Osziszunet_beadando\\stringMatekEgyszerű\\stringMatekEgyszerű.csproj",
       "Microsoft.NET.Test.Sdk >= 17.3.2",
       "NUnit >= 3.13.3",
       "NUnit.Analyzers >= 3.3.0",
       "NUnit3TestAdapter >= 4.2.1",
-      "coverlet.collector >= 3.1.2",
-      "stringMatekEgyszerű >= 1.0.0"
+      "coverlet.collector >= 3.1.2"
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Felhasználó\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\juhasz.mate.laszlo\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Felhasználó\\Desktop\\csharpk\\stringMatekEgyszerű\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Users\\juhasz.mate.laszlo\\Documents\\iskolai-munka\\Szoftverteszteles\\Osziszunet_beadando\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Users\\Felhasználó\\Desktop\\csharpk\\stringMatekEgyszerű\\Tests\\Tests.csproj",
-      "packagesPath": "C:\\Users\\Felhasználó\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Felhasználó\\Desktop\\csharpk\\stringMatekEgyszerű\\Tests\\obj\\",
+      "projectPath": "C:\\Users\\juhasz.mate.laszlo\\Documents\\iskolai-munka\\Szoftverteszteles\\Osziszunet_beadando\\Tests\\Tests.csproj",
+      "packagesPath": "C:\\Users\\juhasz.mate.laszlo\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\juhasz.mate.laszlo\\Documents\\iskolai-munka\\Szoftverteszteles\\Osziszunet_beadando\\Tests\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\Felhasználó\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\juhasz.mate.laszlo\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4004,8 +3984,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\Felhasználó\\Desktop\\csharpk\\stringMatekEgyszerű\\stringMatekEgyszerű\\stringMatekEgyszerű.csproj": {
-              "projectPath": "C:\\Users\\Felhasználó\\Desktop\\csharpk\\stringMatekEgyszerű\\stringMatekEgyszerű\\stringMatekEgyszerű.csproj"
+            "C:\\Users\\juhasz.mate.laszlo\\Documents\\iskolai-munka\\Szoftverteszteles\\Osziszunet_beadando\\stringMatekEgyszerű\\stringMatekEgyszerű.csproj": {
+              "projectPath": "C:\\Users\\juhasz.mate.laszlo\\Documents\\iskolai-munka\\Szoftverteszteles\\Osziszunet_beadando\\stringMatekEgyszerű\\stringMatekEgyszerű.csproj"
             }
           }
         }
@@ -4057,8 +4037,19 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Unable to find project 'C:\\Users\\juhasz.mate.laszlo\\Documents\\iskolai-munka\\Szoftverteszteles\\Osziszunet_beadando\\stringMatekEgyszerű\\stringMatekEgyszerű.csproj'. Check that the project reference is valid and that the project file exists.",
+      "libraryId": "C:\\Users\\juhasz.mate.laszlo\\Documents\\iskolai-munka\\Szoftverteszteles\\Osziszunet_beadando\\stringMatekEgyszerű\\stringMatekEgyszerű.csproj",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

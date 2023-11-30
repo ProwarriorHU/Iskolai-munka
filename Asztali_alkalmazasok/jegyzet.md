@@ -1197,7 +1197,7 @@ pl. *label1.Text = d1.ToString("T");*
   *string szovegesdatum = "2016.12.24";*
   *DateTime datum =* ***DateTime.Parse****(szovegesdatum);*
 
-##Típuskonverziók
+## Típuskonverziók
 - **Implicit** (automatikus)
 pl. *double d = 12;* //12.0
 pl. *int i=13.5;* //adatvesztés lenne, nem működik
@@ -1238,3 +1238,100 @@ pl.
   *int y = 100;*
   *char c2 = (char)y;*
   *Console.WriteLine(c2); //d*
+
+## Hibák, hibaüzenetek és kezelésük
+
+- Hibák előfordulnak 2 fő csoportban:
+  - **Szintaktikai (fomai)** hibák - a progamozási nyelv szabályainak figyelmen kívül hagyása
+  - **Szemantikai (tartalmi)** hibák - rossz algoritmus miatt a program nem, vagy hibásan működik
+### Szintaktikai hibák
+- A fordítóprogram ezeket kiszűri
+- A program nem fordítható le, amíg ki nem javítottuk a hibákat
+- Sok esetben a fejlesztői környezet felajánlja a hiba javítását
+- Leggyakoribb hibaüzenetek:
+  - *'karakter' expected*
+  - *Cannot implicitly convert 'type1' to 'type2'*
+  - *Operator 'op' cannot be applied to operands of type 'tipus1' and 'tipus2'* (Az adott művelet nem hajható végre az adott művelet nem hajtható végre az adott típusokra, pl. egy string és egy int típusú változó nem osztható egymással)
+  - *Use of unassigned local variable 'változónév'* (Olyan változót akarunk használni, aminek nem adtunk értéket)
+  - *The name 'név' doe not exist in the current context* (Az adott blokkban nincs ilyen névvel változó deklarálva vagy nem érhető el)
+### Szemantikai hibák
+- A program formailag hibátlan, azonban mégsem működik jól
+- Hibajelenségek:
+  - Nem a várt eredményt adja
+  - Nem fejeződik be a futása ("lefagy")
+  - Hibaüzenettel leáll a futása (kivételt dob)
+### Hibakeresési eszközök
+- Lépésenkénti futtatás - F11
+- Közben figyelhetjük a lokális változók értékének változását (Locals)
+- Töréspont beiktatása (Oda célszerű elhelyezni, ameddig szerintünk jól működik a program)
+### Kivételek
+- Váratlan, előre nem látható hiba
+- Tipikus kivételek:
+  - **NullReferenceException** - az objektum hivatkozás nincs beállítva semmilyen objektumpéldányra (Deklaráltunk egy objektumot, de még nem hoztuk létre a memóriában)
+  - **ObjectDisposedException** - bezárt fájlból próbálunk olvasni
+  - **FormatException** - nem megfelelő a bemeneti karakterlánc formátuma, nem tudja átkonvertálni a megfelelő típusra
+  - **IndexOutOfRangeException** - rosszul indexelünk, nem létező elemre hivatkozunk
+  - **DivideByZeroException** - kísérlet történt nullával való osztásra
+- Megoldás: Kivételkezelő blokkot írunk, melyben a "veszélyes" utasításokat helyezzük el, így az eetleges hibákat biztonságosan lekezeljük
+### Kivételek kezelése
+
+  try
+  {
+    //problémás utasítások
+  }
+  catch (kivételtípus1)
+  {
+    //hibaüzenet vagy hbajavítás
+  }
+  catch (kivételtípus2)
+  {
+    //hibaüzenet vagy hbajavítás
+  }
+  ...
+  finally
+  {
+    //olyan utasítások, amiknek még kivétel esetén is le kell futnia, nem kötelező
+  }
+
+pl.
+
+  try
+  {
+    int x = int.Parse(textBox1.Text);
+    int y = int.Parse(textBox2.Text);
+    int z = x / y;
+  }
+  catch (DivideByZeroException)
+  {
+    Console.WriteLine("Nullával nem oszthatunk");
+  }
+
+- Általános kivételkezelés (a kivétel típusának specifikálása nélkül):
+
+  catch
+  {
+    Console.WriteLine("Hiba történt a művelet végrehajtása közben");
+  }
+
+- Ha megadunk egy nevet a kivétel objektumunknak, akkor az objektum tartalma lekérhető a név.Message metódussal:
+
+  catch (Exception e)
+  {
+    Console.WriteLine("Ismeretlen hiba: " + e.Message)
+  }
+
+- Saját magunk is dobhatunk kivételt:
+
+  bool hiba = true;
+  do{
+    string s = "";
+    try {
+      Console.Write("kérem a szöveget: ");
+      s = Console.ReadLine();
+      if (s.Length == 0){
+        **throw new Exception**("Nem adott meg szöveget");
+        hiba = false; //ide csak akkor jut el a vezérlés, ha nem lesz kivétel
+      }
+      catch (Exception e) {Console.WriteLine(e.Message);}
+    }
+  }while (hiba);
