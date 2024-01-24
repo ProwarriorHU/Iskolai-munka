@@ -1,8 +1,0 @@
-C:\Users\juhasz.mate.laszlo\Documents\iskolai-munka\Asztali_alkalmazasok\Oraimunka\2023_11_06\bin\Debug\2023_11_06.exe.config
-C:\Users\juhasz.mate.laszlo\Documents\iskolai-munka\Asztali_alkalmazasok\Oraimunka\2023_11_06\bin\Debug\2023_11_06.exe
-C:\Users\juhasz.mate.laszlo\Documents\iskolai-munka\Asztali_alkalmazasok\Oraimunka\2023_11_06\bin\Debug\2023_11_06.pdb
-C:\Users\juhasz.mate.laszlo\Documents\iskolai-munka\Asztali_alkalmazasok\Oraimunka\2023_11_06\obj\Debug\2023_11_06.csproj.AssemblyReference.cache
-C:\Users\juhasz.mate.laszlo\Documents\iskolai-munka\Asztali_alkalmazasok\Oraimunka\2023_11_06\obj\Debug\2023_11_06.csproj.SuggestedBindingRedirects.cache
-C:\Users\juhasz.mate.laszlo\Documents\iskolai-munka\Asztali_alkalmazasok\Oraimunka\2023_11_06\obj\Debug\2023_11_06.csproj.CoreCompileInputs.cache
-C:\Users\juhasz.mate.laszlo\Documents\iskolai-munka\Asztali_alkalmazasok\Oraimunka\2023_11_06\obj\Debug\2023_11_06.exe
-C:\Users\juhasz.mate.laszlo\Documents\iskolai-munka\Asztali_alkalmazasok\Oraimunka\2023_11_06\obj\Debug\2023_11_06.pdb
