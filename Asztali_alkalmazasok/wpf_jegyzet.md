@@ -57,3 +57,54 @@ Gomb.FontStyle = FontStyles.Italic;
 Gomb.FontWeight = FontWeight.Heavy;
 Gomb.Opacity = 0.5;
 ```
+
+## Vezérlőelemek
+Minden vezérlőelem őse a '*Control*' osztály
+
+A legalapvetőbb a '**TextBlock**'- ami tulajdonképp nem is vezérlő, nem a '*Control*' osztály leszármazottja, de ugyanúgy kell kezelni, mint a többi vezérlőt, ezért az egyszerűség kedvéért mi vezérlőnek fogjuk nevezni. 
+
+Szövegek megjelenítésére használjuk
+
+A '**Label**' vezérlő is ezt a célt szolgálja, de a '*Label*'-ön képet is megjeleníthetünk. Általában s '*Label*'-ön egy soros szövegek, vagy képek jeleníthetők meg, a TextBlock akár több soros szöveget is megjelenít, és kevésbé erőforrás igényes.
+
+### TextBlock
+```cs
+<Window x:Class="példaszöveg"
+    xmlns="példaszöveg"
+    xmlns:x="példaszöveg"
+    Title="TextBlockSample" Height="100" Width="200">
+<Grid>
+    <TextBlock>Ez egy TextBlock</TextBlock>
+</Grid>
+</Window>
+```
+Alapból nincs Margin
+
+Ha beleírunk egy hosszabb szöveget:
+```cs
+<LineBreak /> //Sortörés
+
+<TextTrimming="CharacterEllipsis"> //Valószinűleg nem fogjuk teljesen látni, de jelzi
+
+<TextTrimming="WordEllipsis"> //A végén teljes szó marad
+
+<TextWrapping="Wrap"> //Automatikusan darabolódik a rendelkezésre álló hely függvényében
+```
+
+#### Szövegek formázása
+```cs
+<Bold></Bold>
+
+<Italic></Italic>
+
+<Underline></Underline>
+
+<Span></Span>
+
+<Hyperlink RequestNavigate="Hyperlink_RequestNavigate" NavigateUri="https://www.google.com">link</Hyperlink> //Külső URL-ek eléréséhez a háttérkódban kezelnünk kell a *RequestNavigate* eseményt:
+MainWindow.xaml.cs:
+private void Hyperlink_requestNavigate(object sender, RequestNavigateEventArgs e)
+{
+    System.Diagnostics.Process.Start(e.Uri.AbsoluteUri);
+}
+```
