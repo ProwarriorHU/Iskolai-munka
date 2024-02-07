@@ -28,6 +28,7 @@ Adatokat adhatunk meg erőforrásként ('*Resources*'), melyeket lokálisan az a
 A létrehozott osztály az '*Application*' osztály kiterjesztése lesz, ez az alkalmazás fő osztálya, feladata WPF alkalmazásunk elindítása és futtatása.
 
 ## Tulajdonságok
+
 ### Nyomógomb megjelenítése példa:
 ```cs
 <Grid>
@@ -56,4 +57,47 @@ Gomb.FontSize = 20;
 Gomb.FontStyle = FontStyles.Italic;
 Gomb.FontWeight = FontWeight.Heavy;
 Gomb.Opacity = 0.5;
+```
+
+### Grid felosztása
+
+Amellett, hogy szorzókat megadunk szélesség/magasságnak, megadhatunk abszolút értéket
+```cs
+<Grid>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*" />
+        <ColumnDefinition Width="Auto" />
+        <ColumnDefinition Width="100" />
+    </Grid.ColumnDefinitions>
+        <Button>Button 1</Button>
+        <Button Grid.Column="1">Button 2 hosszú szöveggel</Button>
+        <Button Grid.Column="2">Button 3</Button>
+</Grid>
+```
+
+### TextBox vezérlő
+
+Egy vagy többsoros szövegek bevitelére asználjuk
+```cs
+<Grid Margin="10">
+    <TextBox AcceptsReturn="True" TextWrapping="Wrap" />
+</Grid>
+```
+*AcceptsReturn="True"* - Enter/Return billentyűk használhatóak
+
+### Button - nyomógomb
+
+```cs
+<Button>Hello world</Button>
+```
+Ez a gomb még nem csinál semmit, de fel tudunk iratkozni a Click eseményre:
+```cs
+<Button Click="HelloWorldButtonClick">Hello world</Button>
+```
+A C# forráskódban egy megfelelő metódusra lesz szükségünk a 'Click' kezeléséhez:
+```cs
+private void HelloWorldButtonClick(object sender, RoutedEventArgs e)
+{
+    MessageBox.Show("Hello world");
+}
 ```
