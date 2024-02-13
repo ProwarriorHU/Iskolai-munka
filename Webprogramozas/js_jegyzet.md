@@ -83,7 +83,7 @@ A javascript egy C-n alapuló nyelv. Gyengén típusos, azaz a változók típus
 - `.keys()` - csak a kulcsokat adja vissza
 - `.values()` - csak az értékeket adja vissza
 
-## Regex 
+### Regex 
 
 . - bármilyen karakter 
 
@@ -118,3 +118,7 @@ $ - csak a szó vége lehet
 ( ) - csoportosítás 
 
 | (alt+W) - vagy 
+
+## Event listener
+
+- `.addEventListener('érzékelt esemény', kívánt tevékenység)`
