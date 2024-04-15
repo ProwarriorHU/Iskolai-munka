@@ -138,6 +138,7 @@ Egy vagy többsoros szövegek bevitelére asználjuk
 
 ### Button - nyomógomb
 
+Példa:
 ```cs
 <Button>Hello world</Button>
 ```
@@ -152,3 +153,129 @@ private void HelloWorldButtonClick(object sender, RoutedEventArgs e)
     MessageBox.Show("Hello world");
 }
 ```
+
+### Checkbox
+
+```cs
+private void btnShowMe_Click(object sender, RoutedEvenetArgs e)
+    {
+        if (cbxOne.IsChecked == true){
+            MessageBox.Show("Első");
+        }
+        if ((bool)cbxTwo.IsChecked){
+            MessageBox.Show("Második");
+        }
+    }
+```
+Beállíthatjuk, hogy legyen 3 különböző állapota: igaz, hamis, és meg nem határozott (null):
+```cs
+<CheckBox IsThreeState="True" ... />
+```
+(Ezért kell az IsChecked értékét bool-ra konvertálni)
+
+#### RadioButton
+
+Több lehetséges opció közül válaszhatunk ki egyet egy időben
+
+#### PassWordBox
+
+Ugyanúgy működik mint a <span style="color:lightblue">TextBox</span> de meg tudjuk védeni az információt a kíváncsi tekintetektől
+
+#### Image
+
+```cs
+<Image Source="link ide">
+```
+
+Ahelyett hogy külső forrásból töltenénk le a képet, érdemes egybecsomagolni az alkalmazással:
+
+- a Solution Explorerben ->
+- *projekt nevére* Jobb Click -> 
+- Add -> 
+- New Folder: *képek* -> 
+- *képek* Jobb Click -> 
+- Add -> 
+- Existing Item -> 
+- Tallózás -> 
+- *képfájl* -> 
+- Add ->
+- *képfájl*: Properties -> 
+- Build Action: Resource
+
+Másik fontos tulajdonság a **Stretch**. Lehetséges értékei:
+- **Uniform** (alapértelmezett): A kép automatikusan méreteződik hogy beleférjen a rendelkezésre álló helyre. Méretarány viszont kötött, a kép nem torzul
+- **UniformToFill:** méretarány itt is kötött, de lehet, hogy a kép egyes részei kilógnak
+- **Fill:** a méretarány nem kötött, a kép torzulhat
+- **None:** Ha a kép kisebb, mint na rendelkezésre álló terület, semmi sem történik. Ha a kép nagyobb, akkor a kilógó terület le lesz vágva
+
+#### ListBox
+
+Elemek hozzáadása:
+```cs
+private void button1_Click(object sender, RoutedEventArgs e)
+{
+    listBox1.Items.Add(textBox.Text);
+}
+```
+Elemek törlése:
+```cs
+private void DeleteButton_Click(object sender, RoutedEventArgs e)
+{
+    listBox.Items.RemoveAt(listBox1.Items.IndexOf(listBox1.SelectedItem));
+}
+```
+Elemek rendezése:
+```cs
+private void button1_Click(object sender, RoutedEventArgs e)
+{
+    listBox1.Items.SortDescriptions.Add(new System.ComponentModel.SortDescription("Content", System.ComponentModel.ListSorpDirection.Ascending))
+}
+```
+
+#### ComboBox vezérlő
+
+Egy értéket kiválaszhatunk a legördülő listából
+
+A háttérkódban:
+```cs
+private void AddButton_Click(object sender, RoutedEventArgs e)
+{
+    ComboBox1.Items.Add(TextBox1.Text);
+}
+```
+
+Elem törléséhez:
+```cs
+ComboBox1.Items.RemoveAt(Combo1,Items.IndexOf(ComboBox1.SelectedItem));
+```
+
+### WPF Panelek
+
+Vezérlők amik konténerként működnek más vezérlők számára
+- Canvas
+- WrapPanel
+- StackPanel
+- DockPanel
+- Grid
+- UniformGrid
+
+#### Canvas
+
+Elsősorban rajzok elkészyíésére használjuk, de elhelyezhetünk rajta más vezérlőket is, a pozicionálásról mi gondoskodunk (alapból bal felső sarok)
+
+Ha a vezérlők átfedésbe kerülnek, meghatározhatjuk a rétegezési sorrendet. Alapból a később meghatározott kerül felülre.
+
+A zIndex alpból 0 minél nagyobb értékét adunk neki, annál felsőbb rétegbe kerül az objektum.
+
+Alakzatok:
+- Ellipse
+- Line
+- Path
+- Polygon
+- Polyline
+- Rectangle
+
+Közös tulajdonságok:
+- Stroke (szegély)
+- StrokeThickness
+- Fill
