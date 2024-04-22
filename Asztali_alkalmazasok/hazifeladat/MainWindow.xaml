@@ -1,0 +1,61 @@
+﻿<Window x:Class="wpf_canvas.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:wpf_canvas"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="400">
+    <Grid>
+        <Canvas>
+            <Rectangle Panel.ZIndex="1" Canvas.Left="150" Canvas.Top="300" Fill="SaddleBrown" Height="175" Width="100"/>
+            <Polygon Points="100,400 200,350 300,400 300,500 200,550 100,500" Fill="RosyBrown"/>
+            <Polygon Points="200,175 250,175 325,225 300,350 250,350 175,300" Fill="LightGray"/>
+            <Ellipse 
+                Canvas.Left="50" Canvas.Top="250" 
+                Height="100" Width="75" 
+                Fill="Beige">
+                <Ellipse.RenderTransform>
+                    <RotateTransform Angle="-30"/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse Canvas.Left="225" Canvas.Top="75" Height="75" Width="75" Fill="Aquamarine"/>
+            <Ellipse Canvas.Left="50" Canvas.Top="100" Height="100" Width="150" Fill="SlateGray"/>
+            <Ellipse Canvas.Left="100" Canvas.Top="50" Height="150" Width="100" Fill="SlateGray"/>
+            <Line X1="200" Y1="300" X2="225" Y2="175" Stroke="DarkOliveGreen" StrokeThickness="15"/>
+            <Line X1="200" Y1="300" X2="175" Y2="225" Stroke="DarkOliveGreen" StrokeThickness="15"/>
+            <Ellipse 
+                Canvas.Left="140" Canvas.Top="200" 
+                Height="25" Width="50" 
+                Fill="ForestGreen">
+                <Ellipse.RenderTransform>
+                    <RotateTransform Angle="30"/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse 
+                Canvas.Left="210" Canvas.Top="200" 
+                Height="25" Width="50" 
+                Fill="ForestGreen">
+                <Ellipse.RenderTransform>
+                    <RotateTransform Angle="-30"/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse 
+                Canvas.Left="200" Canvas.Top="260" 
+                Height="25" Width="50" 
+                Fill="ForestGreen">
+                <Ellipse.RenderTransform>
+                    <RotateTransform Angle="-30"/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+            <Ellipse 
+                Canvas.Left="140" Canvas.Top="200" 
+                Height="25" Width="50" 
+                Fill="ForestGreen">
+                <Ellipse.RenderTransform>
+                    <RotateTransform Angle="30"/>
+                </Ellipse.RenderTransform>
+            </Ellipse>
+        </Canvas>
+    </Grid>
+</Window>
