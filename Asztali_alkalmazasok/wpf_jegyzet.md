@@ -261,7 +261,9 @@ Vezérlők amik konténerként működnek más vezérlők számára
 
 #### Canvas
 
-Elsősorban rajzok elkészyíésére használjuk, de elhelyezhetünk rajta más vezérlőket is, a pozicionálásról mi gondoskodunk (alapból bal felső sarok)
+Elsősorban rajzok elkészítésére használjuk, de elhelyezhetünk rajta más vezérlőket is, a pozicionálásról mi gondoskodunk (alapból bal felső sarok)
+
+##### Canvas - Z Index
 
 Ha a vezérlők átfedésbe kerülnek, meghatározhatjuk a rétegezési sorrendet. Alapból a később meghatározott kerül felülre.
 
@@ -270,12 +272,25 @@ A zIndex alpból 0 minél nagyobb értékét adunk neki, annál felsőbb rétegb
 Alakzatok:
 - Ellipse
 - Line
-- Path
+- Rectangle
 - Polygon
 - Polyline
-- Rectangle
+- Path
 
 Közös tulajdonságok:
 - Stroke (szegély)
 - StrokeThickness
 - Fill
+
+##### Path
+
+Ez az osztály görbék és összetett rajzok készítésére szolgál. **StreamGeometry** ségítségével tömören meg tudjuk adni alakzatainkat
+
+Főbb jelölések:
+- M - kezdőpont koordinátái pl. M 0,0
+- L - vonal végső koordinátái pl. L 10,20
+- H - vízszintes vonal x koordináta pl. H 90
+- V - függőleges vonal y koordináta pl. V 90
+- A - ív, (méret, elforgatás szöge, nagyív(0 vagy 1), ív iránya(0 vagy 1), végpont)
+- Z - lezárás, aktuális pontból vonalat húz a kezdő pontba
+
