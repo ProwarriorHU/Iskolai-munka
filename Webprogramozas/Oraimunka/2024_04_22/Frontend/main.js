@@ -1,6 +1,9 @@
-import { getData } from "./src/module/requestHelper.mjs";
+import fetchingData from "../Backend/fetchHelper.mjs";
 import { displayDataInTable } from "./src/module/displayData.mjs";
-getData("http://localhost:3000/cars")
+fetchingData.getData("http://localhost:3000/cars")
 .then(data=>{
     displayDataInTable(data)
 })
+fetchingData.postData()
+fetchingData.updateData()
+fetchingData.deleteData()

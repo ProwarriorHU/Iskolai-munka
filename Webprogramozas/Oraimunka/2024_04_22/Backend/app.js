@@ -1,98 +1,119 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const cors = require('cors');
-const fs = require('fs');
+const fs = require('fs').promises;
+const cors = require('cors')
 const app = express();
-const port = 3000;
+const PORT = 3000;
+const DATA_FILE = 'books.json';
 
-// Middleware-ek beállítása
-app.use(cors());
 app.use(bodyParser.json());
 
+// Middleware to handle CORS
 
-
-// GET kérés kezelése (összes autó lekérdezése)
-app.get('/cars', (req, res) => {
-    fs.readFile('cars.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send('Internal Server Error');
-            return;
-        }
-
-        const cars = JSON.parse(data);
-        res.json(cars);
-    });
+app.use(cors());
+// Read all books
+app.get('/books', async (req, res) => {
+    try {
+        const data = await fs.readFile(DATA_FILE, 'utf8');
+        const books = JSON.parse(data);
+        res.json(books);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
+// Read one book by ID
+app.get('/books/:id', async (req, res) => {
+    try {
+        const data = await fs.readFile(DATA_FILE, 'utf8');
+        const books = JSON.parse(data);
+        const book = books.find(b => b.id === parseInt(req.params.id, 10));
 
-// POST kérés kezelése (új autó hozzáadása)
-app.post('/cars', (req, res) => {
-    const newCar = req.body;
-
-    fs.readFile('cars.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send('Internal Server Error');
-            return;
+        if (!book) {
+            res.status(404).send('Book not found');
+        } else {
+            res.json(book);
         }
-
-        const cars = JSON.parse(data);
-        newCar.id = cars.length + 1;
-        cars.push(newCar);
-
-        fs.writeFile('cars.json', JSON.stringify(cars), (err) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send('Internal Server Error');
-                return;
-            }
-
-            res.json(newCar);
-        });
-    });
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
-// PUT kérés kezelése (autó frissítése)
-app.put('/cars/:id', (req, res) => {
-    const carId = parseInt(req.params.id);
-    const updatedCar = req.body;
+// Create a new book
+app.post('/books', async (req, res) => {
+    try {
+        const data = await fs.readFile(DATA_FILE, 'utf8');
+        const books = JSON.parse(data);
+        const newBook = {
+            id: books.length + 1,
+            title: req.body.title,
+            author: req.body.author,
+            year: req.body.year,
+            price: req.body.price,
+        };
 
-    fs.readFile('cars.json', 'utf8', (err, data) => {
-        if (err) {
-            console.error(err);
-            res.status(500).send('Internal Server Error');
-            return;
-        }
+        books.push(newBook);
+        await fs.writeFile(DATA_FILE, JSON.stringify(books, null, 2));
 
-        const cars = JSON.parse(data);
-        const existingCar = cars.find(car => car.id === carId);
-
-        if (!existingCar) {
-            res.status(404).send('Car not found');
-            return;
-        }
-
-        // Frissítsd az autó adatait
-        existingCar.brand = updatedCar.brand;
-        existingCar.model = updatedCar.model;
-        existingCar.engineSize = updatedCar.engineSize;
-
-        fs.writeFile('cars.json', JSON.stringify(cars), (err) => {
-            if (err) {
-                console.error(err);
-                res.status(500).send('Internal Server Error');
-                return;
-            }
-
-            res.json(existingCar);
-        });
-    });
+        res.json(newBook);
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
 });
 
+// Update a book by ID
+app.put('/books/:id', async (req, res) => {
+    try {
+        const data = await fs.readFile(DATA_FILE, 'utf8');
+        let books = JSON.parse(data);
+        const index = books.findIndex(b => b.id === parseInt(req.params.id, 10));
 
+        if (index === -1) {
+            res.status(404).send('Book not found');
+        } else {
+            const updatedBook = {
+                id: parseInt(req.params.id, 10),
+                title: req.body.title,
+                author: req.body.author,
+                year: req.body.year,
+                price: req.body.price,
+            };
 
-// Szerver indítása
-app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+            books[index] = updatedBook;
+            await fs.writeFile(DATA_FILE, JSON.stringify(books, null, 2));
+
+            res.json(updatedBook);
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+// Delete a book by ID
+app.delete('/books/:id', async (req, res) => {
+    try {
+        const data = await fs.readFile(DATA_FILE, 'utf8');
+        let books = JSON.parse(data);
+        const index = books.findIndex(b => b.id === parseInt(req.params.id, 10));
+
+        if (index === -1) {
+            res.status(404).send('Book not found');
+        } else {
+            const deletedBook = books.splice(index, 1)[0];
+            await fs.writeFile(DATA_FILE, JSON.stringify(books, null, 2));
+
+            res.json(deletedBook);
+        }
+    } catch (error) {
+        console.error(error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
 });
